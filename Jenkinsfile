@@ -6,6 +6,9 @@ pipeline {
             agent {
                 docker { image 'mcr.microsoft.com/dotnet/sdk' }
             }
+            environment {
+                DOTNET_CLI_HOME = "/tmp/DOTNET_CLI_HOME"
+            }
             steps {
                 echo 'Building..'
                 sh 'dotnet build'
