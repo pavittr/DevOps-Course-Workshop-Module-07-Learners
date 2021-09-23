@@ -29,4 +29,4 @@ jobs:
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       with:
-        payload: "{\"key\":\"value\"}"
+        payload: "{\"text\":\"Build Complete\"}"
