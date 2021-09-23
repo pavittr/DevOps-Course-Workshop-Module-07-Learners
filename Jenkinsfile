@@ -8,6 +8,8 @@ pipeline {
             }
             steps {
                 echo 'Building..'
+                sh 'dotnet build'
+                sh 'dotnet test'
             }
         }
         stage('Build Node') {
@@ -16,6 +18,10 @@ pipeline {
             }
             steps {
                 echo 'Building Node..'
+                sh 'npm install'
+                sh 'npm run build'
+                sh 'npm t'
+                sh 'npm run lint'
             }
         }
     }
