@@ -15,4 +15,12 @@ jobs:
     - name: Build NPM code
       run: npm run build
       working-directory: ./DotnetTemplate.Web
+    - name: Run .NET tests
+      run: dotnet test
+    - name: Test NPM code
+      run: npm t
+      working-directory: ./DotnetTemplate.Web
+    - name: Lint NPM code
+      run: npm run lint
+      working-directory: ./DotnetTemplate.Web
 
